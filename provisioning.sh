@@ -57,6 +57,7 @@ apt-get update
 git clone https://github.com/ibm-et/spark-kernel.git
 apt-get install -yq --force-yes --no-install-recommends sbt
 cd spark-kernel
+git reset --hard 4ebe0b292f0fdc2d5556fd3968f7595a408674d8
 sbt compile -Xms1024M -Xmx2048M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=1024M
 sbt pack
 mv kernel/target/pack /opt/sparkkernel
